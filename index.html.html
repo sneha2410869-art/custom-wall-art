@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ARTIVA | Custom Wall Art & Murals</title>
+<meta name="description" content="ARTIVA designs custom wall murals, accent walls and personalized wall art for homes and businesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#14213d;--paper:#fbfaf7;--sand:#f0ece4;--gold:#d99a1e;--gold-d:#b57f0f;--muted:#5d6577;--line:#e0dbd0;--r:10px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;line-height:1.15;font-weight:700}
+.wrap{width:min(1120px,90%);margin-inline:auto}
+section{padding:96px 0}
+.skip{position:absolute;left:-999px;background:#fff;padding:10px;z-index:99}.skip:focus{left:10px;top:10px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:20px}
+.logo{font-family:'Fraunces',serif;font-weight:700;font-size:26px;letter-spacing:1px}.logo b{color:var(--gold)}
+.links{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:500}
+.links a:hover{color:var(--gold-d)}
+.menu{display:none;background:none;border:0;font-size:26px;cursor:pointer;color:var(--ink)}
+.btn{display:inline-block;padding:13px 24px;border-radius:6px;font-weight:700;font-size:14px;border:2px solid var(--ink);background:var(--ink);color:#fff;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink)}.btn.ghost:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.sm{padding:9px 16px}
+
+/* hero */
+.hero{padding:0;background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:640px;align-items:stretch}
+.hero-text{padding:90px 6% 90px 0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.hero h1{font-size:clamp(40px,5.6vw,74px);letter-spacing:-1.5px;margin-bottom:22px}
+.hero h1 em{color:var(--gold);font-weight:500}
+.hero p{max-width:480px;color:#c9cfdd;font-size:18px}
+.hero .acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero .btn{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.hero .btn:hover{background:#fff;border-color:#fff}
+.hero .btn.ghost{background:transparent;border-color:#fff;color:#fff}.hero .btn.ghost:hover{background:#fff;color:var(--ink)}
+.hero-img{background:#222 url(https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80) center/cover}
+.hero ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 24px;margin-top:36px;font-size:14px;color:#c9cfdd}
+.hero li:before{content:"✓ ";color:var(--gold)}
+
+/* shared headings */
+.head{max-width:620px;margin-bottom:48px}
+.head h2,.about h2{font-size:clamp(30px,3.8vw,46px);margin-bottom:14px}
+.head p,.about p{color:var(--muted)}
+
+/* about */
+.about .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.about img{border-radius:var(--r);height:460px;width:100%;object-fit:cover;background:var(--sand)}
+.about p+p{margin-top:14px}
+.points{margin-top:26px;display:grid;gap:14px}
+.points div{padding-left:16px;border-left:3px solid var(--gold)}
+.points h3{font-size:18px;font-family:'Manrope',sans-serif}
+.points p{font-size:14px;margin:0}
+
+/* services */
+.services{background:var(--sand)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.card img{height:180px;width:100%;object-fit:cover;background:var(--sand)}
+.card div{padding:22px;display:flex;flex-direction:column;flex:1}
+.card small{font-size:12px;font-weight:700;color:var(--gold-d)}
+.card h3{font-size:21px;margin:4px 0 10px}
+.card p{font-size:14px;color:var(--muted);flex:1;margin-bottom:18px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gallery button{border:0;padding:0;border-radius:var(--r);overflow:hidden;cursor:zoom-in;position:relative;aspect-ratio:1;background:var(--sand)}
+.gallery button:first-child{grid-column:span 2;grid-row:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gallery button:hover img{transform:scale(1.05)}
+.gallery span{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;background:linear-gradient(transparent,rgba(20,33,61,.85));color:#fff;font-weight:700;font-size:14px;text-align:left}
+dialog{border:0;border-radius:var(--r);padding:0;max-width:min(900px,92vw);background:#fff}
+dialog::backdrop{background:rgba(10,15,30,.8)}
+dialog img{width:100%;max-height:70vh;object-fit:cover}
+dialog .cap{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;gap:12px}
+dialog .x{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:#fff;font-size:20px;cursor:pointer}
+
+/* pricing */
+.pricing{background:var(--sand)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.plan{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;display:flex;flex-direction:column;position:relative}
+.plan.pop{border:2px solid var(--ink)}
+.tag{position:absolute;top:-13px;left:28px;background:var(--gold);font-size:12px;font-weight:700;padding:3px 12px;border-radius:20px}
+.plan h3{font-size:24px}
+.plan .d{color:var(--muted);font-size:14px;margin:6px 0 16px}
+.price{font-family:'Fraunces',serif;font-size:38px;font-weight:700}.price small{font-family:'Manrope',sans-serif;font-size:13px;color:var(--muted);font-weight:400}
+.plan ul{list-style:none;margin:20px 0 26px;flex:1;font-size:14px}
+.plan li{padding:6px 0}.plan li:before{content:"✓";color:var(--gold-d);font-weight:700;margin-right:10px}
+.note{margin-top:24px;font-size:13px;color:var(--muted)}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}
+.contact h2{font-size:clamp(30px,3.8vw,46px);margin-bottom:14px}
+.contact .info p{color:var(--muted);margin-bottom:12px}
+.contact .info a{color:var(--gold-d);font-weight:700}
+form{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:34px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:flex;flex-direction:column;gap:6px;min-width:0}.f.full{grid-column:1/-1}
+label{font-size:13px;font-weight:700}
+input,select,textarea{width:100%;padding:12px;border:1px solid #cfc9bc;border-radius:6px;background:#fff;color:var(--ink);font-size:14px}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(217,154,30,.3)}
+textarea{min-height:110px;resize:vertical}
+.msg{grid-column:1/-1;font-size:14px;min-height:20px}.msg.ok{color:#17643a}.msg.err{color:#9b2c25}
+.fine{grid-column:1/-1;font-size:12px;color:var(--muted)}
+
+/* cta + footer */
+.cta{background:var(--ink);color:#fff;padding:64px 0}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+.cta h2{font-size:clamp(26px,3vw,36px)}
+.cta .btn{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+footer{background:#0d1528;color:#aab1c2;padding:56px 0 0;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;padding-bottom:40px}
+footer h3{color:#fff;font-size:17px;margin-bottom:14px}
+footer a{display:block;margin-bottom:8px}footer a:hover{color:var(--gold)}
+footer .logo{color:#fff;display:inline-block;margin-bottom:12px}
+.fb{border-top:1px solid #26314f;padding:18px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13px}
+
+@media(max-width:960px){
+ .grid4{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}
+ .hero-grid,.about .wrap,.contact .wrap{grid-template-columns:1fr}
+ .hero-img{min-height:300px;order:-1}.hero-text{padding:48px 0 64px}
+ .about .wrap,.contact .wrap{gap:36px}.about img{height:340px}
+ .gallery{grid-template-columns:1fr 1fr}.fgrid{grid-template-columns:1fr 1fr}
+ section{padding:72px 0}
+ .menu{display:block}
+ .links{display:none;position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--paper);padding:8px 5% 18px;border-bottom:1px solid var(--line)}
+ .links.open{display:flex}.links a{padding:12px 0}.links .btn{text-align:center;margin-top:8px}
+}
+@media(max-width:560px){.grid4{grid-template-columns:1fr}form{grid-template-columns:1fr;padding:22px}.fgrid{grid-template-columns:1fr}.gallery button:first-child{grid-column:span 2;grid-row:span 1;aspect-ratio:2/1}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+ <div class="wrap nav">
+  <a href="#home" class="logo">ARTIVA<b>.</b></a>
+  <button class="menu" id="menu" aria-label="Open menu" aria-expanded="false" aria-controls="links">☰</button>
+  <nav class="links" id="links" aria-label="Main">
+   <a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a>
+   <a href="#contact" class="btn sm">Book a design</a>
+  </nav>
+ </div>
+</header>
+
+<main id="main">
+<section class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div class="hero-text">
+   <h1>Turn your walls into <em>works of art.</em></h1>
+   <p>Custom murals and wall art for homes, children’s rooms and businesses, designed around your space and your story.</p>
+   <div class="acts"><a href="#services" class="btn">See our services</a><a href="#gallery" class="btn ghost">View gallery</a></div>
+   <ul><li>Custom designs</li><li>Personal consultation</li><li>Homes and businesses</li></ul>
+  </div>
+ </div>
+ <div class="hero-img" role="img" aria-label="Stylish interior with wall art" style="position:absolute;top:0;right:0;bottom:0;width:48%"></div>
+</section>
+
+<section class="about" id="about">
+ <div class="wrap">
+  <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1000&q=80" alt="Interior with coordinated wall art" loading="lazy">
+  <div>
+   <h2>Beautiful walls, personal stories.</h2>
+   <p>We believe a wall is more than empty space. It’s a chance to show your personality, creativity and style.</p>
+   <p>From playful children’s murals to elegant living-room accent walls and bold commercial spaces, we bring your idea to life.</p>
+   <div class="points">
+    <div><h3>Made for your space</h3><p>Designs tailored to your room and preferences.</p></div>
+    <div><h3>Creative concepts</h3><p>Artistic ideas for every style and setting.</p></div>
+    <div><h3>Personal consultation</h3><p>Talk through your idea before you commit.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="wrap">
+  <div class="head"><h2>Art for every kind of space</h2><p>Pick a service and we’ll add it to your booking request.</p></div>
+  <div class="grid4">
+   <article class="card"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=700&q=80" alt="Living room interior" loading="lazy"><div><small>Home</small><h3>Living room accent walls</h3><p>A focal point that complements your furniture and style.</p><button class="btn sm pick" data-s="Living Room Accent Wall">Choose service</button></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=700&q=80" alt="Colorful home interior" loading="lazy"><div><small>Kids</small><h3>Children’s room murals</h3><p>Playful themes, nature scenes and colorful ideas.</p><button class="btn sm pick" data-s="Children's Room Mural">Choose service</button></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=700&q=80" alt="Cafe interior" loading="lazy"><div><small>Business</small><h3>Commercial murals</h3><p>Cafes, offices, studios and shops with a distinct look.</p><button class="btn sm pick" data-s="Commercial Mural">Choose service</button></div></article>
+   <article class="card"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=700&q=80" alt="Framed art on a wall" loading="lazy"><div><small>Personal</small><h3>Custom wall art</h3><p>Share your inspiration and get a one-of-a-kind concept.</p><button class="btn sm pick" data-s="Custom Wall Art">Choose service</button></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="gallery">
+ <div class="wrap">
+  <div class="head"><h2>Design inspiration</h2><p>Select an image to enlarge it. Every project is customized to you.</p></div>
+  <div class="gallery">
+   <button data-img="photo-1616486338812-3dadae4b4ace" data-t="Elegant home"><img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80" alt="Elegant home interior" loading="lazy"><span>Elegant home</span></button>
+   <button data-img="photo-1600210492486-724fe5c67fb0" data-t="Modern living"><img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=600&q=80" alt="Modern living room" loading="lazy"><span>Modern living</span></button>
+   <button data-img="photo-1554118811-1e0d58224f24" data-t="Creative cafe"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=600&q=80" alt="Cafe interior" loading="lazy"><span>Creative cafe</span></button>
+   <button data-img="photo-1579783902614-a3fb3927b6a5" data-t="Artistic decor"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80" alt="Wall decor" loading="lazy"><span>Artistic decor</span></button>
+  </div>
+ </div>
+</section>
+
+<dialog id="dlg" aria-label="Image preview">
+ <button class="x" id="dx" aria-label="Close preview">✕</button>
+ <img id="dimg" src="" alt="">
+ <div class="cap"><h3 id="dt"></h3><a href="#contact" class="btn sm" id="dbook">Book a similar design</a></div>
+</dialog>
+
+<section class="pricing" id="pricing">
+ <div class="wrap">
+  <div class="head"><h2>Starting prices</h2><p>Sample starting prices. Your final quote depends on design, wall size and materials.</p></div>
+  <div class="grid3">
+   <article class="plan"><h3>Custom art concept</h3><p class="d">Plan your wall-art idea.</p><p class="price">₹1,500 <small>starting</small></p><ul><li>Design discussion</li><li>Style and color planning</li><li>Personalized concept</li></ul><button class="btn ghost pick" data-s="Custom Wall Art" data-b="Under ₹5,000">Choose plan</button></article>
+   <article class="plan pop"><span class="tag">Popular</span><h3>Accent wall</h3><p class="d">A standout wall at home.</p><p class="price">₹5,000 <small>starting</small></p><ul><li>Custom wall-art concept</li><li>Color and style selection</li><li>Project consultation</li></ul><button class="btn pick" data-s="Living Room Accent Wall" data-b="₹5,000–₹10,000">Choose plan</button></article>
+   <article class="plan"><h3>Business mural</h3><p class="d">Shops, offices and cafes.</p><p class="price">₹10,000 <small>starting</small></p><ul><li>Business-focused concept</li><li>Space and theme discussion</li><li>Custom quote</li></ul><button class="btn ghost pick" data-s="Commercial Mural" data-b="₹10,000–₹25,000">Choose plan</button></article>
+  </div>
+  <p class="note">Prices are sample values, not a confirmed quotation.</p>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="info">
+   <h2>Tell us about your wall</h2>
+   <p>Share your idea, space and preferred style. We’ll review your request and get back to you with next steps.</p>
+   <p>Email: <a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a></p>
+  </div>
+  <form id="form" novalidate>
+   <div class="f"><label for="name">Full name *</label><input id="name" required maxlength="100" autocomplete="name"></div>
+   <div class="f"><label for="phone">Phone *</label><input id="phone" type="tel" required maxlength="20" autocomplete="tel"></div>
+   <div class="f full"><label for="email">Email *</label><input id="email" type="email" required maxlength="150" autocomplete="email"></div>
+   <div class="f full"><label for="service">Service *</label>
+    <select id="service" required><option value="">Select a service</option><option>Living Room Accent Wall</option><option>Children's Room Mural</option><option>Commercial Mural</option><option>Custom Wall Art</option></select></div>
+   <div class="f"><label for="date">Preferred date</label><input id="date" type="date"></div>
+   <div class="f"><label for="budget">Budget</label><select id="budget"><option value="">Select budget</option><option>Under ₹5,000</option><option>₹5,000–₹10,000</option><option>₹10,000–₹25,000</option><option>Above ₹25,000</option></select></div>
+   <div class="f full"><label for="message">Your idea</label><textarea id="message" maxlength="2000" placeholder="Room, wall size, theme, colors…"></textarea></div>
+   <button class="btn full" style="grid-column:1/-1" type="submit">Send request by email</button>
+   <p class="msg" id="msg" role="status" aria-live="polite"></p>
+   <p class="fine">This opens your email app with the details filled in. Sending it does not confirm an appointment.</p>
+  </form>
+ </div>
+</section>
+
+<section class="cta"><div class="wrap"><h2>Ready to transform your space?</h2><a href="#contact" class="btn">Start your project</a></div></section>
+</main>
+
+<footer>
+ <div class="wrap fgrid">
+  <div><a href="#home" class="logo">ARTIVA<b>.</b></a><p>Creative wall art for spaces that tell your story.</p></div>
+  <div><h3>Explore</h3><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#pricing">Pricing</a></div>
+  <div><h3>Services</h3><a href="#services">Accent walls</a><a href="#services">Children’s murals</a><a href="#services">Commercial murals</a><a href="#services">Custom wall art</a></div>
+  <div><h3>Contact</h3><a href="mailto:hello@yourdomain.com">hello@yourdomain.com</a><a href="#contact">Request a consultation</a></div>
+ </div>
+ <div class="wrap fb"><p>© <span id="yr"></span> ARTIVA. All rights reserved.</p><a href="#home">Back to top</a></div>
+</footer>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const EMAIL="hello@yourdomain.com"; // change to the company's real email
+$("yr").textContent=new Date().getFullYear();
+
+// mobile menu
+const menu=$("menu"),links=$("links");
+const setMenu=o=>{links.classList.toggle("open",o);menu.textContent=o?"✕":"☰";menu.setAttribute("aria-expanded",o)};
+menu.onclick=()=>setMenu(!links.classList.contains("open"));
+links.querySelectorAll("a").forEach(a=>a.onclick=()=>setMenu(false));
+document.onkeydown=e=>{if(e.key==="Escape")setMenu(false)};
+
+// date: no past dates
+const t=new Date();$("date").min=new Date(t-t.getTimezoneOffset()*6e4).toISOString().slice(0,10);
+
+// service / plan buttons preselect the form
+document.querySelectorAll(".pick").forEach(b=>b.onclick=()=>{
+  $("service").value=b.dataset.s;
+  if(b.dataset.b)$("budget").value=b.dataset.b;
+  $("contact").scrollIntoView({behavior:"smooth"});
+  setTimeout(()=>$("name").focus({preventScroll:true}),400);
+});
+
+// gallery preview
+const dlg=$("dlg");
+document.querySelectorAll(".gallery button").forEach(b=>b.onclick=()=>{
+  $("dimg").src=`https://images.unsplash.com/${b.dataset.img}?auto=format&fit=crop&w=1400&q=85`;
+  $("dimg").alt=b.dataset.t;$("dt").textContent=b.dataset.t;dlg.showModal();
+});
+$("dx").onclick=()=>dlg.close();
+$("dbook").onclick=()=>dlg.close();
+dlg.onclick=e=>{if(e.target===dlg)dlg.close()};
+
+// form → opens email client (no backend needed)
+$("form").onsubmit=e=>{
+  e.preventDefault();
+  const m=$("msg"),v=id=>$(id).value.trim();
+  if(!v("name")||!v("phone")||!v("email")||!$("service").value){m.className="msg err";m.textContent="Please fill in name, phone, email and service.";return}
+  if(!/^\S+@\S+\.\S+$/.test(v("email"))){m.className="msg err";m.textContent="Please enter a valid email address.";return}
+  const body=`Name: ${v("name")}\nPhone: ${v("phone")}\nEmail: ${v("email")}\nService: ${$("service").value}\nPreferred date: ${v("date")||"-"}\nBudget: ${$("budget").value||"-"}\n\nIdea:\n${v("message")||"-"}`;
+  location.href=`mailto:${EMAIL}?subject=${encodeURIComponent("ARTIVA booking request – "+$("service").value)}&body=${encodeURIComponent(body)}`;
+  m.className="msg ok";m.textContent="Your email app should open. If it doesn’t, write to "+EMAIL+".";
+};
+</script>
+</body>
+</html>
